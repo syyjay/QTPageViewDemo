@@ -16,7 +16,7 @@
 /*设置图片的内容模式，默认为系统默认模式*/
 @property (nonatomic, assign) UIViewContentMode contentMode;
 /*分页控件显示的位置*/
-@property (nonatomic,assign) CGPoint pageControlPosition;
+@property (nonatomic,assign) CGRect   pageControlRect;
 /**
  设置分页控件指示器延
  不设则显示默认颜色
@@ -24,4 +24,12 @@
  @param currentPageColor 当前页码的颜色
  */
 - (void)setPageColor:(UIColor *)pageColor currentPageColor:(UIColor *)currentPageColor;
+/**
+ 停止定时器
+ */
+- (void)stopTimer;
+/**
+ 开启定时器
+ */
+- (void)startTimer;
 @end

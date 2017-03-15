@@ -44,8 +44,6 @@ static CGFloat defaultTime=5;
 }
 
 - (void)initView{
-    self.images=@[@"timg1.jpeg",@"timg2.jpeg",@"timg3.jpeg",@"timg4.jpeg"];
-    
     self.scorllView=[[UIScrollView alloc]initWithFrame:self.bounds];
     self.scorllView.contentSize=CGSizeMake(3*[self scrollViewW], [self scrollViewH]);
     self.scorllView.contentOffset=CGPointMake([self scrollViewW], 0);
@@ -56,7 +54,6 @@ static CGFloat defaultTime=5;
     [self addSubview:self.scorllView];
     
     self.currentImgView=[[UIImageView alloc]initWithFrame:CGRectMake([self scrollViewW], 0, [self scrollViewW], [self scrollViewH])];
-    self.currentImgView.image=[UIImage imageNamed:self.images[self.currentIndex]];
     [self.scorllView addSubview:self.currentImgView];
     
     self.otherImgView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [self scrollViewW], [self scrollViewH])];
@@ -69,7 +66,7 @@ static CGFloat defaultTime=5;
     self.pageControl.currentPageIndicatorTintColor=[UIColor redColor];
     [self addSubview:self.pageControl];
     
-    [self startTimer];
+    self.images=@[@"timg1.jpeg",@"timg2.jpeg",@"timg3.jpeg",@"timg4.jpeg"];
 }
 
 - (void)stopTimer{
@@ -107,6 +104,31 @@ static CGFloat defaultTime=5;
     self.pageControl.currentPage=self.currentIndex;
 }
 
+- (void)setImages:(NSArray *)images{
+    _images=images;
+    self.currentImgView.image=[UIImage imageNamed:self.images[self.currentIndex]];
+    [self startTimer];
+}
+
+/**
+ 设置轮播时间
+ @param time 轮播时间
+ */
+- (void)setTime:(NSTimeInterval)time{
+    _time=time;
+    [self startTimer];
+}
+
+/**
+ 设置分页控件指示器延
+ 不设则显示默认颜色
+ @param pageColor 其他页面的颜色
+ @param currentPageColor 当前页码的颜色
+ */
+- (void)setPageColor:(UIColor *)pageColor currentPageColor:(UIColor *)currentPageColor{
+    self.pageControl.pageIndicatorTintColor=pageColor;
+    self.pageControl.currentPageIndicatorTintColor=currentPageColor;
+}
 
 /**
  设置图片填充模式
