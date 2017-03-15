@@ -13,6 +13,11 @@
 		692087291E782BEB0040DDF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 692087271E782BEB0040DDF8 /* Main.storyboard */; };
 		6920872B1E782BEB0040DDF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6920872A1E782BEB0040DDF8 /* Assets.xcassets */; };
 		6920872E1E782BEB0040DDF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6920872C1E782BEB0040DDF8 /* LaunchScreen.storyboard */; };
+		692087391E782DA80040DDF8 /* QTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 692087381E782DA80040DDF8 /* QTPageView.m */; };
+		692087481E7912620040DDF8 /* timg1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 692087441E7912620040DDF8 /* timg1.jpeg */; };
+		692087491E7912620040DDF8 /* timg2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 692087451E7912620040DDF8 /* timg2.jpeg */; };
+		6920874A1E7912620040DDF8 /* timg3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 692087461E7912620040DDF8 /* timg3.jpeg */; };
+		6920874B1E7912620040DDF8 /* timg4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 692087471E7912620040DDF8 /* timg4.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,12 @@
 		6920872A1E782BEB0040DDF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6920872D1E782BEB0040DDF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6920872F1E782BEB0040DDF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		692087371E782DA80040DDF8 /* QTPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTPageView.h; sourceTree = "<group>"; };
+		692087381E782DA80040DDF8 /* QTPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTPageView.m; sourceTree = "<group>"; };
+		692087441E7912620040DDF8 /* timg1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg1.jpeg; sourceTree = "<group>"; };
+		692087451E7912620040DDF8 /* timg2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg2.jpeg; sourceTree = "<group>"; };
+		692087461E7912620040DDF8 /* timg3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg3.jpeg; sourceTree = "<group>"; };
+		692087471E7912620040DDF8 /* timg4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg4.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +69,8 @@
 		6920871D1E782BEB0040DDF8 /* QTPageViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				692087361E782CF60040DDF8 /* QTPageView */,
+				692087431E7912620040DDF8 /* Source */,
 				692087211E782BEB0040DDF8 /* AppDelegate.h */,
 				692087221E782BEB0040DDF8 /* AppDelegate.m */,
 				692087241E782BEB0040DDF8 /* ViewController.h */,
@@ -77,6 +90,26 @@
 				6920871F1E782BEB0040DDF8 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		692087361E782CF60040DDF8 /* QTPageView */ = {
+			isa = PBXGroup;
+			children = (
+				692087371E782DA80040DDF8 /* QTPageView.h */,
+				692087381E782DA80040DDF8 /* QTPageView.m */,
+			);
+			path = QTPageView;
+			sourceTree = SOURCE_ROOT;
+		};
+		692087431E7912620040DDF8 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				692087441E7912620040DDF8 /* timg1.jpeg */,
+				692087451E7912620040DDF8 /* timg2.jpeg */,
+				692087461E7912620040DDF8 /* timg3.jpeg */,
+				692087471E7912620040DDF8 /* timg4.jpeg */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +171,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				692087481E7912620040DDF8 /* timg1.jpeg in Resources */,
 				6920872E1E782BEB0040DDF8 /* LaunchScreen.storyboard in Resources */,
+				6920874B1E7912620040DDF8 /* timg4.jpeg in Resources */,
+				6920874A1E7912620040DDF8 /* timg3.jpeg in Resources */,
 				6920872B1E782BEB0040DDF8 /* Assets.xcassets in Resources */,
+				692087491E7912620040DDF8 /* timg2.jpeg in Resources */,
 				692087291E782BEB0040DDF8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				692087391E782DA80040DDF8 /* QTPageView.m in Sources */,
 				692087261E782BEB0040DDF8 /* ViewController.m in Sources */,
 				692087231E782BEB0040DDF8 /* AppDelegate.m in Sources */,
 				692087201E782BEB0040DDF8 /* main.m in Sources */,
@@ -310,6 +348,7 @@
 				692087341E782BEB0040DDF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
