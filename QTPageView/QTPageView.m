@@ -51,6 +51,8 @@ static CGFloat defaultTime=5;
     self.scorllView.showsHorizontalScrollIndicator=NO;
     self.scorllView.pagingEnabled=YES;
     self.scorllView.delegate=self;
+    UITapGestureRecognizer *singleTap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImgView)];
+    [self.scorllView addGestureRecognizer:singleTap];
     [self addSubview:self.scorllView];
     
     self.currentImgView=[[UIImageView alloc]initWithFrame:CGRectMake([self scrollViewW], 0, [self scrollViewW], [self scrollViewH])];
@@ -59,14 +61,11 @@ static CGFloat defaultTime=5;
     self.otherImgView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [self scrollViewW], [self scrollViewH])];
     [self.scorllView addSubview:self.otherImgView];
     
-    self.pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(0, [self scrollViewH]-37, [self scrollViewW], 37)];//37固定高度
+    self.pageControl=[[UIPageControl alloc]init];
     self.pageControl.currentPage=0;
-    self.pageControl.numberOfPages=self.images.count;
     self.pageControl.pageIndicatorTintColor=[UIColor grayColor];
     self.pageControl.currentPageIndicatorTintColor=[UIColor redColor];
     [self addSubview:self.pageControl];
-    
-    self.images=@[@"timg1.jpeg",@"timg2.jpeg",@"timg3.jpeg",@"timg4.jpeg"];
 }
 
 - (void)stopTimer{
@@ -83,6 +82,20 @@ static CGFloat defaultTime=5;
     NSTimeInterval time=_time<2?defaultTime:_time;
     self.timer=[NSTimer timerWithTimeInterval:time target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+
+
+/**
+ 点击图片 block和delegate都可 block优先级高
+ */
+- (void)tapImgView{
+    if (self.tapImgBlock) {
+        self.tapImgBlock(self.currentIndex);
+    }else{
+        if ([self.delegate respondsToSelector:@selector(tapPageView:imgIndex:)]) {
+            [self.delegate tapPageView:self imgIndex:self.currentIndex];
+        }
+    }
 }
 
 /**
@@ -107,6 +120,9 @@ static CGFloat defaultTime=5;
 - (void)setImages:(NSArray *)images{
     _images=images;
     self.currentImgView.image=[UIImage imageNamed:self.images[self.currentIndex]];
+    self.pageControl.numberOfPages=self.images.count;
+    CGSize size=[self.pageControl sizeForNumberOfPages:self.images.count];
+    self.pageControl.frame=CGRectMake(([self scrollViewW]-size.width)/2, [self scrollViewH]-size.height, size.width, size.height);
     [self startTimer];
 }
 
@@ -117,6 +133,27 @@ static CGFloat defaultTime=5;
 - (void)setTime:(NSTimeInterval)time{
     _time=time;
     [self startTimer];
+}
+
+- (void)setControlPostion:(QTPageViewControlPostion)controlPostion{
+    CGSize controlSize=[_pageControl sizeForNumberOfPages:_images.count];
+    CGFloat margin=10;
+    CGRect controlF=_pageControl.frame;
+    switch (controlPostion) {
+        case QTPageViewControlPostionHide:
+            self.pageControl.hidden=YES;
+            break;
+        case QTPageViewControlPostionBottomLeft:
+            controlF.origin.x=margin;
+            _pageControl.frame=controlF;
+            break;
+        case QTPageViewControlPostionBottomRight:
+            controlF.origin.x=[self scrollViewW]-controlSize.width-margin;
+            _pageControl.frame=controlF;
+            break;
+        default:
+            break;
+    }
 }
 
 /**
