@@ -84,7 +84,6 @@ static CGFloat defaultTime=5;
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
-
 /**
  点击图片 block和delegate都可 block优先级高
  */
@@ -123,6 +122,7 @@ static CGFloat defaultTime=5;
     self.pageControl.numberOfPages=self.images.count;
     CGSize size=[self.pageControl sizeForNumberOfPages:self.images.count];
     self.pageControl.frame=CGRectMake(([self scrollViewW]-size.width)/2, [self scrollViewH]-size.height, size.width, size.height);
+    self.pageControl.hidden=images.count==1;
     [self startTimer];
 }
 
