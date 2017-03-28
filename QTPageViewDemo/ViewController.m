@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   self.pageView.images=@[@"timg1.jpeg",@"timg2.jpeg",@"timg3.jpeg",@"timg4.jpeg"];
-//    [self.pageView setControlPostion:QTPageViewControlPostionBottomLeft];
+    [self.pageView setControlPostion:QTPageViewControlPostionBottomLeft];
 //    self.pageView.contentMode=UIViewContentModeScaleAspectFit;
     // Do any additional setup after loading the view, typically from a nib.
 }
