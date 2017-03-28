@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690ED9441E8AA04300F774B2 /* 轮播.gif in Resources */ = {isa = PBXBuildFile; fileRef = 690ED9431E8AA04300F774B2 /* 轮播.gif */; };
 		692087201E782BEB0040DDF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6920871F1E782BEB0040DDF8 /* main.m */; };
 		692087231E782BEB0040DDF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 692087221E782BEB0040DDF8 /* AppDelegate.m */; };
 		692087261E782BEB0040DDF8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692087251E782BEB0040DDF8 /* ViewController.m */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		690ED9431E8AA04300F774B2 /* 轮播.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "轮播.gif"; sourceTree = "<group>"; };
 		6920871B1E782BEB0040DDF8 /* QTPageViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QTPageViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6920871F1E782BEB0040DDF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		692087211E782BEB0040DDF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		690ED9421E8AA04300F774B2 /* ScreenShot */ = {
+			isa = PBXGroup;
+			children = (
+				690ED9431E8AA04300F774B2 /* 轮播.gif */,
+			);
+			path = ScreenShot;
+			sourceTree = "<group>";
+		};
 		692087121E782BEB0040DDF8 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 		6920871D1E782BEB0040DDF8 /* QTPageViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				690ED9421E8AA04300F774B2 /* ScreenShot */,
 				692087361E782CF60040DDF8 /* QTPageView */,
 				692087431E7912620040DDF8 /* Source */,
 				692087211E782BEB0040DDF8 /* AppDelegate.h */,
@@ -176,6 +187,7 @@
 				6920874B1E7912620040DDF8 /* timg4.jpeg in Resources */,
 				6920874A1E7912620040DDF8 /* timg3.jpeg in Resources */,
 				6920872B1E782BEB0040DDF8 /* Assets.xcassets in Resources */,
+				690ED9441E8AA04300F774B2 /* 轮播.gif in Resources */,
 				692087491E7912620040DDF8 /* timg2.jpeg in Resources */,
 				692087291E782BEB0040DDF8 /* Main.storyboard in Resources */,
 			);
